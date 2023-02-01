@@ -1,0 +1,201 @@
+
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <title>ALPR System</title>
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+   
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Poppins:300,400,500,700" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="{% static '/css/homePage.css' %}">
+    <link href="{% static '/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+</head>
+<body>
+
+    <header id="header" class="fixed-top d-flex align-items-center   header-transparent">
+        <div class="container d-flex justify-content-between align-items-center">
+    
+          <div id="logo">
+            <a href="{% url 'home' %}"><img src="{% static 'images/logog.png' %}" style="background: black" alt=""></a>
+           
+          </div>
+    
+          <nav id="navbar" class="navbar">
+            <ul>
+              <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+              <li><a class="nav-link scrollto" href="#about">About</a></li>
+              <li><a class="nav-link scrollto" href="#services">Services</a></li>
+              <li><a class="nav-link scrollto" href="#team">Team</a></li>
+              <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+            </ul>
+            <i class="bi bi-list mobile-nav-toggle"></i>
+          </nav><!-- .navbar -->
+        </div>
+    </header><!-- End Header -->
+
+    <section id="hero">
+        <div class="hero-container">
+          <h1>ALPR System detection Information</h1>
+          <h2>EHTP Hassania</h2>
+          <br><br><br><br><br><br>
+          <form action="/action_page.php">  
+            <a href="{% url 'login' %}" class = "sign btn">
+               Sign in</a>
+               <a href="{% url 'register' %}" class = "rgt btn">
+               Register </a>
+          </form>
+        </div>
+    </section>
+    <!-- End Hero Section -->
+
+    <main id="main">
+
+      <!-- ======= About Section ======= -->
+      <section id="about">
+        <div class="container" >
+          <div class="section-header">
+            <h3 class="section-title">description de projet : </h3>
+            <p class="section-description">ALPR system</p>
+          </div>
+          <div class="row about-container">  
+            <div class="col-lg-6 content order-lg-1 order-2">
+              <div class="icon-box" >
+                <div class="icon"></div>
+                <h4 class="title">À PROPOS DU PROJET</h4>
+                <p class="description">  Le système ALPR est une technologie de reconnaissance automatique des plaques d'immatriculation qui aidera tous les ménages et les propriétaires d'entreprise à accéder facilement à l'ouverture de leur portail et de leur porte en scannant leur numéro de plaque d'immatriculation. De plus, ALPR fournit également aux utilisateurs un moyen efficace et simple de gérer leurs profils d'utilisateurs.</p>
+              </div>
+  
+              <!-- <div class="icon-box">
+                <div class="icon"></div>
+                <h4 class="title">About2</h4>
+                <p class="description"> ALPR system is an Automated License Plate Recognition technology which will help all the household and business owner to easy access to open their gate and door by scanning their licence plate number.</p>
+              </div>
+  
+              <div class="icon-box">
+                <div class="icon"></div>
+                <h4 class="title">About3</h4>
+                <p class="description"> ALPR system is an Automated License Plate Recognition technology which will help all the household and business owner to easy access to open their gate and door by scanning their licence plate number.</p>
+              </div>
+   -->
+            </div>
+  
+            <div class="col-lg-6 background order-lg-2 order-1"></div>
+          </div>
+  
+        </div>
+      </section><!-- End About Section -->
+  
+      <!-- ======= Services Section ======= -->
+      <section id="services">
+        <div class="container" >
+          <div class="section-header">
+            <h3 class="section-title">Services</h3>
+            <p class="section-description">Nous fournissons la technologie de reconnaissance automatique des plaques d'immatriculation pour votre entreprise ainsi que pour votre garage(parking) personnel</p>
+          </div>
+          <div class="row" >
+            <div class="col-lg-4 col-md-6" >
+              <div class="box">
+                <div class="icon"></div>
+                <h4 class="title">Analyse Automatique D'immatriculation</h4>
+                <p class="description">Notre système peut scanner automatiquement un véhicule et donner accès aux véhicules en vérifiant leur éligibilité.</p>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6" >
+              <div class="box">
+                <div class="icon"></div>
+                <h4 class="title">Ajouter des voiture</h4>
+                <p class="description">L'application offre à l'utilisateur la possibilité d'ajouter ses véhicules au système de sorte que la voiture puisse être autorisée à accéder lors de la verification.</p>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6" >
+              <div class="box">
+                <div class="icon"></div>
+                <h4 class="title"> Espace de stationnement disponible</h4>
+                <p class="description">Le système peut informer les utilisateurs des places de stationnement disponibles afin que l'utilisateur puisse garer efficacement sa voiture.</p>
+              </div>
+            </div>
+
+          </div>
+  
+        </div>
+      </section><!-- End Services Section -->
+  
+      <!-- ======= Team Section ======= -->
+      <section id="team">
+        <div class="container">
+          <div class="section-header">
+            <h3 class="section-title">Presenter par:</h3>
+            <p class="section-description">EL ghafraoui Ayoub ingenieur developpement logiciel</p>
+            
+          </div>
+          <div class="col">
+            <div class="row">
+              <div class="member">
+                <div class="pic"><img src= "{% static 'images/ayoub.jpg' %}" alt=""></div>
+                <h4>El ghafraoui Ayoub</h4>
+                <h4>Abdessamad EL RHARRAS</h4>
+              </div>
+            </div>
+
+          </div>
+      </section><!-- End Team Section -->
+  
+      <!-- ======= Contact Section ======= -->
+      <section id="contact">
+        <div class="container">
+          <div class="section-header">
+            <h3 class="section-title">Contact</h3>  
+          </div>
+        </div>
+  
+        <div class="container mt-5">
+              <div class="info">
+                <div>
+                  <p><B>ALPR System detection d'immatriculation de vehicule</B></p>
+                  <p>Massira 3</p>
+                </div>
+  
+                <div>
+                  <i class="fa fa-envelope"></i>
+                  <p>ay.elghafraoui@gmail.com</p>
+                </div>
+  
+                <div>
+                  <i class="fa fa-phone"></i>
+                  <p>+212 636016640</p>
+                </div>
+              </div>
+        </div>
+      </section><!-- End Contact Section -->
+  
+    </main><!-- End #main -->
+  
+    <!-- ======= Footer ======= -->
+    <footer id="footer">
+      <div class="footer-top">
+        <div class="container">
+  
+        </div>
+      </div>
+  
+      <div class="container">
+        <div class="copyright">
+          <p>Merci de Nous contacter</p>
+        </div>
+        
+      </div>
+    </footer><!-- End Footer -->
+  
+    <script src="{% static 'js/homePage.js'  %}"></script>
+
+
+</body>
+</html>
+
+
+
+
+

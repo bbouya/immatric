@@ -1,0 +1,121 @@
+{%  extends 'accounts/main.html' %}
+
+{% block content %}
+
+<div class="container">
+    <br><br>
+    <form action="#" method="POST" enctype="multipart/form-data">
+        
+        <div style="text-align: center;">
+
+            <input style="display: none;" id="selectedVideoOrImageId" type="checkbox" name="checkMode" value="video" />
+    
+            <div style="margin-top: 15px; ">
+                <div style="display:inline-block; margin: 5px; font-size: 14px; color: #ffa600;">
+                    IP CAMERA:</div>
+    
+                <div style="margin-left: 5px; display: inline-block;">
+                    <form method="post" enctype=multipart/form-data action="">
+                        <input type="text" name="textbox" id="sourceInputId" size="20">
+                        <label class="getFileLabel" for="setUrlLinkId">CONNECT</label>
+                        <input style="display: none;" name="ttt" type="submit" id="setUrlLinkId" value="changeUrl"
+                            onclick="sendStopCommand(), resetSettings(), form.submit()" />
+                    </form>
+                </div>
+                <div style="display: inline-block; color:#ffa600; margin-left: 10px;">OR:</div>
+                <div style="margin-left: 5px; display: inline-block;">
+                    <form action="#" method="POST" enctype="multipart/form-data">
+                        <div class="input-group">
+                            <input type="file" class="form-control" name="image_name" required>
+                            <input type="submit" value="Upload" class="btn btn-outline-secondary">
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+    
+            <div>
+                <img style="max-width: 60%; border-radius: 20px; box-shadow: 6px 4px 8px #000000; margin-top: 10px; margin-bottom: 5px;"
+                    src = "{% url 'video_feed' %}" >
+                    
+            </div>
+            
+
+            <form method="post" action= "{% url 'tasks' %}">
+                {% csrf_token %}
+                <input style="border-radius: 7px; height: 30px;" type="submit" value="Stop/Start" name="stop" />
+                <input style="border-radius: 7px; height: 30px;" type="submit" value="Capture" name="click"/>
+                
+            </form>
+
+    
+            <div style="display:inline-block; margin: 5px; font-size: 14px; color: #ffa600;">RENDER MODE:</div>
+            <div style="display:inline-block; margin-bottom: 5px; margin-top: 5px; box-shadow: 6px 4px 8px #000000;">
+                <form method="POST" action = "{% url 'select' %}"> 
+                    {% csrf_token %} 
+                        <select name = 'select_name'>
+                                <option value="aaa" name ='object'>OBJECTS plate extractor</option>
+                                <option value="bbb" name = 'ocr'>Objet OCR Extractor</option>
+                        </select>
+                    <button type="submit" class="btn btn-default">Go</button>
+                </form>
+            </div>
+            
+            <div style="display:inline-block;">
+                <input style=" height: 12px; width: 12px;" id="viewSourceId" type="checkbox" name="source">
+                <div style="display:inline-block; color: #ffa600;">VIEW SOURCE</div>
+                </input>
+            </div>
+            
+            <div>
+                <tr style="border: solid black;">
+                    <td style="background-color: greenyellow;">
+                        <h1 class="display-8"> {{ text }}</h1>
+                    </td>
+                </tr>
+            </div>
+            
+        </div>
+    </form>
+</div>
+
+<br>
+
+<div class="row">
+    <div class="col-md-7">
+        <h5>List of Vehicles</h5>
+        <hr>
+        <div class="card card-body">
+
+            <br>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <form method="get">
+                        <p><b>{{searchFilter.form}}</b></p>
+        
+                        <button class="btn btn-primary btn-sm btn-block" type="submit">Filter</button>
+                  </form>
+                </div>
+            </div>
+
+          <br>
+          
+            
+            <table class="table">
+                <tr>
+                    <th>Vehicle plate id</th>
+                    <th>License plate</th>
+                    <th>Model</th>
+                    <th>Status</th>
+                    <th>Update</th>
+                    <th>Remove</th>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}
+
